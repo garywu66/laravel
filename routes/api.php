@@ -20,5 +20,6 @@ Route::group([
     Route::post('/user/login', 'UserController@login');
     Route::get('/user/info', 'UserController@info');
 
+    Route::apiResource('channels', 'ChannelController');
 });
 
