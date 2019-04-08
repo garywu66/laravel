@@ -5,22 +5,18 @@ namespace App\Entities;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 通路
+ * 廣告機
  * @property int $id
+ * @property int $shop_id
  * @property string $name
  * @property string $status 狀態
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  */
-class Channel extends Model
+class Device extends Model
 {
-    protected $table = 'channels';
+    protected $table = 'devices';
 
     const STATUS_OK = 'ok';
     const STATUS_DELETED = 'deleted';
-
-    public function shops()
-    {
-        return $this->hasMany(Shop::class);
-    }
 }

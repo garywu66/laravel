@@ -21,5 +21,11 @@ Route::group([
     Route::get('/user/info', 'UserController@info');
 
     Route::apiResource('channels', 'ChannelController');
+
+    Route::get('/shops/getAllWithChannel', 'ShopController@getAllWithChannel');
+    Route::apiResource('channels.shops', 'ShopController');
+
+    Route::apiResource('devices', 'DeviceController');
+
 });
 

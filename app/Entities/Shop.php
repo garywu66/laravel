@@ -5,22 +5,23 @@ namespace App\Entities;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 通路
+ * 門市
  * @property int $id
+ * @property int $channel_id
  * @property string $name
  * @property string $status 狀態
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  */
-class Channel extends Model
+class Shop extends Model
 {
-    protected $table = 'channels';
+    protected $table = 'shops';
 
     const STATUS_OK = 'ok';
     const STATUS_DELETED = 'deleted';
 
-    public function shops()
+    public function channel()
     {
-        return $this->hasMany(Shop::class);
+        return $this->belongsTo(Channel::class);
     }
 }
